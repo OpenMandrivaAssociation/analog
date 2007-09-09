@@ -1,11 +1,7 @@
-%define name	analog
-%define version	6.0
-%define release	%mkrel 2
-
 Summary:	WWW server logfile analysis program
-Name:		%{name}
-Version:	%{version}
-Release:	%{release}
+Name:		analog
+Version:	6.0
+Release:	%mkrel 3
 Source:		http://www.analog.cx/%{name}-%{version}.tar.bz2
 Patch0:		%{name}-5.21-htmlform.patch
 Patch1:		%{name}-5.23-perlform.patch
@@ -82,5 +78,3 @@ install -m644  lang/* %{buildroot}%{_datadir}/analog/
 %dir %{_datadir}/analog
 %{_datadir}/analog/*
 %{_mandir}/man1/*
-
-
