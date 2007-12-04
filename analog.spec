@@ -11,7 +11,7 @@ Patch4:		%{name}-5.22-png.patch
 License:	Distributable
 Group:		Monitoring
 URL:		http://www.analog.cx/
-BuildRequires:	XFree86-devel
+BuildRequires:	X11-devel
 BuildRequires:	freetype2-devel
 BuildRequires:	gd-devel >= 2
 BuildRequires:	jpeg-devel
