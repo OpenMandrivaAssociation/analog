@@ -17,6 +17,7 @@ BuildRequires:	gd-devel >= 2
 BuildRequires:	jpeg-devel
 BuildRequires:	pcre-devel
 BuildRequires:	libpng-devel
+BuildRoot:	%{_tmppath}/%{name}-buildroot
 
 %description
 WWW server logfile analysis program with lots of features. Check
