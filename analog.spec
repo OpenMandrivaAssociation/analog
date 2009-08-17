@@ -6,11 +6,11 @@ License:	Distributable
 Group:		Monitoring
 URL:		http://www.analog.cx/
 Source:		http://www.analog.cx/%{name}-%{version}.tar.bz2
-Patch0:		%{name}-5.21-htmlform.patch
-Patch1:		%{name}-5.23-perlform.patch
-Patch2:		%{name}-5.31-config.patch
-Patch3:		%{name}-5.22-defaults.patch
-Patch4:		%{name}-5.22-png.patch
+Patch0:		analog-5.21-htmlform.patch
+Patch1:		analog-5.23-perlform.patch
+Patch2:		analog-5.31-config.patch
+Patch3:		analog-5.22-defaults.patch
+Patch4:		analog-5.22-png.patch
 BuildRequires:	bzip2-devel
 BuildRequires:	freetype2-devel
 BuildRequires:	gd-devel >= 2
@@ -30,7 +30,7 @@ Apache is suggested as the default web server.
 %prep
 
 %setup -q
-%patch0 -p1
+%patch0 -p0
 %patch1 -p1
 %patch2 -p1
 %patch3 -p1
