@@ -1,7 +1,7 @@
 Summary:	WWW server logfile analysis program
 Name:		analog
 Version:	6.0
-Release:	%mkrel 4
+Release:	%mkrel 5
 License:	Distributable
 Group:		Monitoring
 URL:		http://www.analog.cx/
