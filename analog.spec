@@ -11,13 +11,11 @@ Patch1:		analog-5.23-perlform.patch
 Patch2:		analog-5.31-config.patch
 Patch3:		analog-5.22-defaults.patch
 Patch4:		analog-5.22-png.patch
+Patch5:		analog-6.0-link.patch
 BuildRequires:	bzip2-devel
-BuildRequires:	freetype2-devel
 BuildRequires:	gd-devel >= 2
-BuildRequires:	jpeg-devel
-BuildRequires:	libpng-devel
 BuildRequires:	pcre-devel
-BuildRequires:	X11-devel
+BuildRequires:	zlib-devel
 BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
 
 %description
@@ -34,13 +32,15 @@ Apache is suggested as the default web server.
 %patch1 -p1
 %patch2 -p1
 %patch3 -p1
+%patch5 -p0 -b .link
 
 %build
 
 %make \
-    CFLAGS="%{optflags}" \
+    CC="gcc %ldflags" \
+    CFLAGS="%{optflags} -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE" \
     DEFS="-DHAVE_GD -DHAVE_ZLIB -DHAVE_BZLIB -DHAVE_PCRE -DLANGDIR=\\\"%{_datadir}/analog/\\\" -DCONFIGDIR=\\\"%{_sysconfdir}/\\\"" \
-    LIBS="-lgd -lpcre -lpng -ljpeg -lz -lbz2 -lm"
+    LIBS="-lgd -lpcre -lz -lbz2 -lm"
 
 %install
 rm -rf %{buildroot}
