@@ -1,0 +1,17 @@
+--- analog-5.23/anlgform.pl	2002-05-14 16:20:00.000000000 -0400
++++ analog-5.23.oden/anlgform.pl	2002-05-19 23:46:42.000000000 -0400
+@@ -19,11 +19,13 @@
+ #    of Perl (don't remove the #! though).
+ # 3) You also need to edit anlgform.html if you want to use the form.
+ # 4) Add to the forbidden commands below if you want.
++$analog = '/usr/bin/analog';
+ 
+ @forbidden = qw(LOGFORMAT APACHELOGFORMAT DEFAULTLOGFORMAT
+ 		APACHEDEFAULTLOGFORMAT HEADERFILE FOOTERFILE UNCOMPRESS
+ 		OUTFILE CACHEOUTFILE LOCALCHARTDIR ERRFILE DNS CGI
+-		SETTINGS PROGRESSFREQ LANGFILE DESCFILE);
++		SETTINGS PROGRESSFREQ LANGFILE DESCFILE LOGFILE DOMAINFILE);
++
+ # Forbidden commands: sysadmin can add more (must be in upper case!)
+ # Other commands you might consider adding, because they allow users to
+ # specify which files to use for the analysis, are LOGFILE and DOMAINSFILE.

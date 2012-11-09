@@ -1,0 +1,82 @@
+--- analog-5.31/analog.cfg.orig	2003-01-11 12:48:28.000000000 +0100
++++ analog-5.31/analog.cfg	2003-01-26 06:32:30.000000000 +0100
+@@ -10,10 +10,28 @@
+ #
+ # If you need a LOGFORMAT command (most people don't -- try it without first!),
+ # it must go here, above the LOGFILE commands.
+-LOGFILE logfile.log
+-# LOGFILE /old/logs/access_log.*
+-# OUTFILE Report.html
+-# HOSTNAME "[my organisation]"
++LOGFILE /var/log/httpd/access_log*
++# Your organisation's name and URL for the top line of the report
++HOSTNAME "[my organisation]"
++HOSTURL http://localhost
++#
++# Where to write the report
++OUTFILE /var/www/html/analog/report.html
++#
++# URL for the images directory
++IMAGEDIR /images/
++#
++# URL and local directory for the pie charts
++CHARTDIR /analog/images/
++LOCALCHARTDIR /var/www/html/analog/images/
++#
++# Style sheet for the output page
++STYLESHEET none
++#
++# Web server fetches /dir/index.html when asked for /dir/
++DIRSUFFIX index.html
++# How to uncompress compressed logfiles
++UNCOMPRESS *.gz,*.Z "/usr/bin/gzip -cd"
+ #
+ # You probably don't need to change anything below this until you are
+ # experienced.
+@@ -28,12 +46,12 @@
+ SUBTYPE *.gz,*.Z
+ # OSCHARTEXPAND Windows
+ # Add whichever of these types of pages you have on your server, or others.
+-# PAGEINCLUDE *.shtml
++PAGEINCLUDE *.shtml
+ # PAGEINCLUDE *.asp
+ # PAGEINCLUDE *.jsp
+-# PAGEINCLUDE *.cfm
++PAGEINCLUDE *.cfm
+ # PAGEINCLUDE *.pl
+-# PAGEINCLUDE *.php
++PAGEINCLUDE *.php
+ # More SEARCHENGINE commands can be found at
+ #   http://www.analog.cx/helpers/#conffiles
+ SEARCHENGINE http://*google.*/* q,as_q,as_epq,as_oq
+@@ -103,3 +121,30 @@
+ TYPEALIAS .cfm     ".cfm  [Cold Fusion]"
+ TYPEALIAS .php     ".php  [PHP]"
+ TYPEALIAS .js      ".js   [JavaScript code]"
++REQCHART ON
++REDIRCHART ON
++FAILCHART ON
++TYPECHART ON
++SIZECHART ON
++PROCTIMECHART ON
++DIRCHART ON
++HOSTCHART ON
++REDIRHOSTCHART ON
++FAILHOSTCHART ON
++DOMCHART ON
++ORGCHART ON
++REFCHART ON
++REFSITECHART ON
++REDIRREFCHART ON
++FAILREFCHART ON
++BROWREPCHART ON
++BROWSUMCHART ON
++OSCHART ON
++USERCHART ON
++REDIRUSERCHART ON
++FAILUSERCHART ON
++SEARCHQUERYCHART ON
++SEARCHWORDCHART ON
++INTSEARCHQUERYCHART ON
++INTSEARCHWORDCHART ON
++STATUSCHART ON
