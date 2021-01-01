@@ -1,16 +1,16 @@
 Summary:	WWW server logfile analysis program
 Name:		analog
-Version:	6.0
-Release:	9
+Version:	6.0.16
+Release:	1
 License:	Distributable
 Group:		Monitoring
-URL:		http://www.analog.cx/
-Source:		http://www.analog.cx/%{name}-%{version}.tar.bz2
+# Used to be http://www.analog.cx/, but that seems to be down forever
+URL:		https://www.c-amie.co.uk/software/analog/
+Source:		https://github.com/c-amie/analog-ce/archive/%{version}/%{name}-%{version}.tar.gz
 Patch0:		analog-5.21-htmlform.patch
 Patch1:		analog-5.23-perlform.patch
 Patch2:		analog-5.31-config.patch
 Patch3:		analog-5.22-defaults.patch
-Patch4:		analog-5.22-png.patch
 Patch5:		analog-6.0-link.patch
 BuildRequires:	bzip2-devel
 BuildRequires:	gd-devel >= 2
@@ -27,12 +27,7 @@ Apache is suggested as the default web server.
 
 %prep
 
-%setup -q
-%patch0 -p0
-%patch1 -p1
-%patch2 -p1
-%patch3 -p1
-%patch5 -p0 -b .link
+%autosetup -p1 -n analog-ce-%{version}
 
 %build
 

@@ -1,41 +1,26 @@
---- anlgform.html	2004-12-19 14:51:22.000000000 +0100
-+++ anlgform.html.oden	2009-08-17 16:50:33.000000000 +0200
-@@ -5,7 +5,7 @@
- </head>
- 
- <body>
--<h1><!-- img src="/images/analogo.gif" alt="" --> Analog form interface</h1>
-+<h1><img src="/images/analogo.png" alt=""> Analog form interface</h1>
- 
- <!-- This version is in British English. Forms in other languages can be -->
- <!-- found in the "lang" folder or directory. -->
-@@ -16,23 +16,23 @@
- 
+diff -up analog-ce-6.0.16/anlgform.html.1~ analog-ce-6.0.16/anlgform.html
+--- analog-ce-6.0.16/anlgform.html.1~	2021-01-01 05:26:43.223283684 +0100
++++ analog-ce-6.0.16/anlgform.html	2021-01-01 05:28:01.843236898 +0100
+@@ -12,17 +12,17 @@
+ <!-- First, uncomment the img tag above, edited if necessary. -->
  <!-- Next, uncomment the following line, edited to reflect the correct -->
  <!-- location of anlgform.pl in you server's filespace. -->
 -<!-- form action="/cgi-bin/anlgform.pl" method="POST" -->
 +<form action="/cgi-bin/anlgform.pl" method="POST">
- 
  <!-- Many systems will want the IMAGEDIR to be different on the form -->
  <!-- than from the command line, because it should not be within /cgi-bin/ -->
 -<!-- input type=hidden name="IMAGEDIR" value="/images/" -->
 +<input type=hidden name="IMAGEDIR" value="/images/">
- 
  <!-- Some users will want to set their logfile like this. -->
 -<!-- input type=hidden name="LOGFILE" value="/usr/local/etc/httpd/logs/access_log" -->
-+<!-- input type=hidden name="LOGFILE" value="/var/log/httpd/access_log" -->
- 
++<input type=hidden name="LOGFILE" value="/var/log/httpd/access_log">
  <!-- After you've made these edits, you can remove the "strong" lines below -->
- 
  <hr>
  <h2>1. Report choices</h2>
- 
 -<strong><font color=red>N.B. This form will not work - e.g. the buttons may
 -not even appear - until you've configured it according to the instructions.
--When you've configured it, you should remove this paragraph.<br>
 +<strong><font color=red>N.B. This form is incomplete until you've configured
-+it according to the instructions. When you've configured it, you should remove
-+this paragraph.<br>
- </font></strong>
- 
- <i>See <a href="http://www.analog.cx/">the analog
++it according to the instructions.
+ When you've configured it, you should remove this paragraph.<br>
+ </font></strong> <i>See <a href="http://www.analog.cx/">the analog
+ home page</a> for the meanings of the various reports.</i>
